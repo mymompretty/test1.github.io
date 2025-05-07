@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>시험 범위 안내</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fdf6e3;
+      text-align: center;
+      padding: 50px;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      background-color: #f5deb3;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #f3d999;
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 18px;
+      color: #333;
+      background-color: #fff8dc;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>중간고사 시험 범위</h1>
+
+  <button onclick="showRange('korean')">국어</button>
+  <button onclick="showRange('math')">수학</button>
+  <button onclick="showRange('english')">영어</button>
+
+  <div id="result">과목을 선택하세요.</div>
+
+  <script>
+    function showRange(subject) {
+      const result = document.getElementById('result');
+      let message = "";
+
+      switch (subject) {
+        case 'korean':
+          message = "📘 국어 시험 범위:<br> - 문학: 고전시가, 현대소설<br> - 비문학: 인문, 사회 지문<br> - 문법: 단어의 발음, 품사";
+          break;
+        case 'math':
+          message = "📐 수학 시험 범위:<br> - 다항식의 연산<br> - 인수분해<br> - 이차방정식과 그 활용";
+          break;
+        case 'english':
+          message = "📗 영어 시험 범위:<br> - 교과서 1~4과<br> - 문법: 시제, 관계대명사<br> - 어휘: 수업 단어 전체";
+          break;
+        default:
+          message = "과목을 선택하세요.";
+      }
+
+      result.innerHTML = message;
+    }
+  </script>
+
+</body>
+</html>
